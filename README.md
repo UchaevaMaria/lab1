@@ -1,2 +1,2 @@
 hi all 
-my name is -
+it is my name
