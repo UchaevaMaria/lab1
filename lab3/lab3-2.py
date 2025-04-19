@@ -27,12 +27,12 @@ class Teacher(Person):
                 print(student.name, 'ID:', student.student_id)
     
     #проверка
-teacher = Teacher("Иван Иванов", 40, "Математика")
-student1 = Student("Анна Петрова", 20, "12345")
-student2 = Student("Борис Сидоров", 21, "67890")
-teacher.add_student(student1)
-teacher.add_student(student2)
-teacher.list_students()
-teacher.remove_student(student1)
-teacher.list_students()
-teacher.remove_student(student1)
+if __name__ == "__main__":
+    teacher = Teacher("Иван Иванов", 40, "Математика")
+    student1 = Student("Анна Петрова", 20, "12345")
+    student2 = Student("Борис Сидоров", 21, "67890")
+    teacher.add_student(student1)
+    teacher.add_student(student2)
+    teacher.list_students()
+    teacher.remove_student(student1)
+    teacher.list_students()
