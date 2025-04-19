@@ -15,9 +15,11 @@ class Student: #создание класса
         print("Студент", self.name)
         print('ID', self.student_id)
         print("Средний балл составляет:", self.get_average())
+if __name__ == "__main__":
+    student = Student("Кирилл Ким", "1122145")
     
-student = Student("Кирилл Ким", "1122145") #создаем обьект
-student.add_grade(2)
-student.add_grade(7)
-student.add_grade(11)  # не добавится :/
-student.display_info() 
+    student = Student("Кирилл Ким", "1122145") #создаем обьект
+    student.add_grade(2)
+    student.add_grade(7)
+    student.add_grade(11)  # не добавится :/
+    student.display_info() 
