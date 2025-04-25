@@ -1,19 +1,15 @@
 import random
 
-def deal_card():
-    """Возвращает случайную карту (значение от 2 до 11)."""
+def deal_card(): #возвращает рандом карту
     return random.randint(2, 11)
 
-def calculate_score(cards):
-    """Подсчитывает сумму очков в руке."""
+def calculate_score(cards): #подсчитывает сумму
     return sum(cards)
 
-def play_game():
-    """Запускает игру '21'."""
+def play_game(): #запуск игр
     player_cards = []
     dealer_cards = []
 
-    # 1. Начальная раздача карт
     player_cards.append(deal_card())
     player_cards.append(deal_card())
     dealer_cards.append(deal_card())
@@ -33,16 +29,16 @@ def play_game():
                 print("Перебор! Вы проиграли.")
         else:
             print("Вы остановились.")
-            break  # Переход к ходу дилера
-    print(f"Карты дилера: {dealer_cards}, Счет: {dealer_score}")  # Раскрываем карты дилера
-    while dealer_score < 17 and player_score <= 21:  # Дилер берет карты, пока у него < 17 и игрок не проиграл
+            break  # переход к ходу дилера
+    print(f"Карты дилера: {dealer_cards}, Счет: {dealer_score}")  #  карты дилера
+    while dealer_score < 17 and player_score <= 21:  # дилер берет карты, пока у него меньше 17
         new_card = deal_card()
         dealer_cards.append(new_card)
         dealer_score = calculate_score(dealer_cards)
         print(f"Дилер взял карту {new_card}. Карты дилера: {dealer_cards}, Счет: {dealer_score}")
-    if player_score <= 21:  # Проверяем, что игрок не проиграл
+    if player_score <= 21:  # проверяем, что не проиграл 
         if dealer_score > 21:
-            print("У дилера перебор! Вы выиграли.")  # Это условие уже проверено в цикле выше, но оставим для ясности
+            print("У дилера перебор! Вы выиграли.") 
         elif player_score > dealer_score:
             print("Вы выиграли!")
         elif player_score < dealer_score:
